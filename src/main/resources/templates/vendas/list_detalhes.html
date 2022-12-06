@@ -1,0 +1,45 @@
+<div th:insert="fragments/header :: modelheader"></div>
+<h2>Detalhes da Venda</h2>
+
+<div>
+    
+    <th>Id da Venda: </th> <th  th:text=" ${venda.id}"></th>
+    <p th:text="${venda.data}"></p>
+    <th>Nome do Cliente: </th> <th th:text="${venda.pessoa.nome}"></th>
+    
+    
+    
+</div>
+
+
+
+<table class="table" border="0">
+    <tr>                   
+        <th>Id Produto</th>
+        <th>Descrição</th>
+        <th>Quantidade</th>
+        <th>Valor Unitário</th>
+
+        <th>Total</th>
+    </tr>
+    <tr th:each="f : ${venda.itemvendas}">
+        <td th:text="${f.produto.id}"> </td>
+        <td th:text="${f.produto.descricao}"> </td>
+        <td th:text="${f.qtd}"> </td>
+        <td th:text="${f.produto.valor}"> </td>
+        <td th:text="${f.total()}"> </td>
+
+    </tr>
+
+
+
+</table>
+
+<label >
+    <font size="10">
+    <strong>Total:</strong>
+    <span th:text="' '+ ${#numbers.formatCurrency(venda.total())}"/> 
+    </font> <br />
+</label>
+
+<div th:insert="fragments/footer :: modelfooter"></div>

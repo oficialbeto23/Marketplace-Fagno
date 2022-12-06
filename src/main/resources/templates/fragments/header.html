@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org"  th:fragment="modelheader">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no"/>
+        <link href="/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="../../css/style.css">
+    </head>
+
+    <body class="container">
+        <header>
+            <!-- ADICIONAR MENU DE OPÇÕES, EXEMPLO NAVBAR -->
+            
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #64DD17">
+                <a class="navbar-brand" href="/home">
+                    <img src="../../img/ifto_logo2.png" width="100px"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navMobile" class="navbar-collapse collapse justify-content-end">
+                    <a sec:authorize="hasRole('USER')" onclick="window.location.href = '/vendas/form'"> Área do Cliente &nbsp;&nbsp;&nbsp;&nbsp; </a>
+                    <a sec:authorize="hasRole('ADMIN')" onclick="window.location.href = '/vendas/list'"> Vendas Realizadas&nbsp;&nbsp;&nbsp;&nbsp; </a>
+                    <a onclick="window.location.href = '/produtos/list'"> Lista de Produtos &nbsp;&nbsp;&nbsp;&nbsp; </a><!-- comment -->
+                    <a sec:authorize="hasRole('ADMIN')" onclick="window.location.href = '/pessoasfisica/form'"> Cadastro de Clientes &nbsp;&nbsp;&nbsp;&nbsp; </a>
+                    <!-- essa linha de baixo ta dando permissão apenas para o ADM ver a lista de pessoas -->
+                    <a sec:authorize="hasRole('ADMIN')" onclick="window.location.href = '/pessoasfisica/list'"> Lista de Clientes&nbsp;&nbsp;&nbsp;&nbsp; </a>
+                </div>
+                <!-- comment -->
+            </nav>
+        </header>
+            
+            

@@ -1,0 +1,39 @@
+
+
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+        <title>Documento</title>
+        <script src="https://kit.fontawesome.com/006642858d.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        
+        
+    
+    </head>
+    <!-- comment -->
+    <body>
+        <div th:insert="fragments/header :: modelheader"></div>
+    </body>
+    <div class="alert alert-danger" th:errors="${pessoaFisica.*}"></div>
+    
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        
+    <body>
+
+        <h1>FORM</h1>
+        <form th:action="${pessoaFisica.id == 0} ? @{/pessoasfisica/save} : @{/pessoasfisica/update}" th:object="${pessoaFisica}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <input type="text" th:field="*{nome}"  placeholder="Nome">
+            <input type="text" th:field="*{cpf}"  placeholder="Cpf">
+            <input type="submit" value="Enviar">
+        </form>
+
+    </body>
+    
+    
+<div th:insert="fragments/footer :: modelfooter"></div>
+

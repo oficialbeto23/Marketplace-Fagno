@@ -1,0 +1,14 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 29 de out. de 2022, 14:20:22
+    Author     : CHFS
+*/
+
+@charset "UTF-8";
+*{margin: 0; padding: 0; box-sizing: border-box;}
+nav{height: 90px; color: #B71C1C;}
+a{cursor: pointer; font-weight: bold}
+
